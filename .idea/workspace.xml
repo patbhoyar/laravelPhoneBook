@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae3502ea-35b8-4220-9bc7-5ccbc9cabbaf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/app.php" afterPath="$PROJECT_DIR$/app/config/app.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="laravelPhonebook.iws" />
@@ -29,7 +29,7 @@
       <file leaf-file-name="composer.json" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/composer.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="36" selection-start="331" selection-end="331" vertical-scroll-proportion="0.3034682" vertical-offset="0" max-vertical-offset="692">
+            <state line="36" column="0" selection-start="668" selection-end="668" vertical-scroll-proportion="0.7803468" vertical-offset="0" max-vertical-offset="692">
               <folding />
             </state>
           </provider>
@@ -203,14 +203,18 @@
       <created>1408649214429</created>
       <updated>1408649214429</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Initalize Project">
+      <created>1408649401286</created>
+      <updated>1408649401286</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="39" y="22" width="1881" height="1178" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="File Transfer" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32912534" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32912534" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -271,7 +275,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="36" selection-start="331" selection-end="331" vertical-scroll-proportion="0.3034682" vertical-offset="0" max-vertical-offset="692">
+        <state line="36" column="0" selection-start="668" selection-end="668" vertical-scroll-proportion="0.7803468" vertical-offset="0" max-vertical-offset="692">
           <folding />
         </state>
       </provider>
