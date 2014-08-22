@@ -1,0 +1,157 @@
+body, ul{
+    margin:0;
+    padding: 0;
+    font-family: arial;
+}
+
+ul{ list-style: none; }
+a{ text-decoration: none; }
+
+ul li{
+    float:left;
+    padding: 0 5px;
+}
+
+ul li a{
+    color:black;
+}
+
+#headerContainer{
+    width: 100%;
+    background: #183B68;
+}
+
+#header, #errorNotifier{
+    width: 800px;
+    margin: auto;
+    height: 40px;
+}
+
+#header a, #loginRegister{
+    color: #F0E4E4;
+}
+
+#menu li{ 
+    float: left;
+    padding: 8px 20px;
+    font-size: 18px;
+}
+
+.colorGrey{ color: #555; }
+.size14{ font-size: 14px; }
+
+form label{
+    width: 140px;
+    display: inline-block;
+    text-align: right;
+    margin-right: 20px;
+}
+
+form input[type="text"], input[type="password"]{
+    width: 200px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    height: 19px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+form input[type="submit"]{
+    margin-left: 165px;
+    font-size: 20px;
+}
+
+.displayLoginErrors{
+    display: list;
+}
+
+#errorNotifier{
+    background: #F3A6A6;
+    margin: 10px auto;
+    padding: 5px 0;
+    height: auto;
+    text-align: center;
+    border: 1px solid rgb(218, 76, 76);
+    border-radius: 10px;
+}
+
+#pageTitleContainer{
+    font-size: 27px;
+    margin: 20px 0;
+    border-bottom: 1px solid #ccc;
+    padding: 0 10px 10px 10px;
+}
+
+.buttons{
+    width: 200px;
+    height: 26px;
+    background: #ddd;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.buttons a{
+    color: #000;
+    display: block;
+    margin-top: 5px;
+}
+
+#displayContainer{
+    width: 800px;
+    height: 1000px;
+    margin: auto;
+}
+
+#messages{
+    width: 760px;
+    background: #0ef;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 2px 10px;
+    margin: 10px;
+}
+
+#closeMsg{
+    float: right;
+    margin-top: -17px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', 'HomeController@index');
+Route::get('/export/pdf', 'HomeController@exportPdf');
+
+/* User */
+Route::resource('user', 'UserController');
