@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="MAMPServer (1)" uploadOnCheckin="c7f0338c-f328-4800-b7aa-3ef6b385a3a2">
+  <component name="PublishConfigData" serverName="MAMPServer (1)">
     <serverData>
       <paths name="MAMPServer (1)">
         <serverdata>
@@ -10,7 +10,6 @@
         </serverdata>
       </paths>
     </serverData>
-    <option name="myUploadOnCheckinName" value="Github" />
   </component>
 </project>
 
