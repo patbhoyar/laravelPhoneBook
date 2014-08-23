@@ -17,7 +17,7 @@
         <div id="header">
             <ul id="menu">
                 <li id="home">{{ HTML::link('/', 'Home') }}</li>
-                <li id="create">{{ HTML::link('/user/add', 'Add') }}</li>
+                <li id="create">{{ HTML::link('/user/create', 'Add') }}</li>
                 <li id="albums">{{ HTML::link('/export/pdf', 'Export') }}</li>
             </ul>
 	    </div>
