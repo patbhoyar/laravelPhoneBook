@@ -57,7 +57,7 @@ form input[type="text"], input[type="password"]{
 }
 
 form input[type="submit"]{
-    margin-left: 165px;
+    margin: 10px 0 0 170px;
     font-size: 20px;
 }
 
@@ -119,9 +119,25 @@ form input[type="submit"]{
     cursor: pointer;
 }
 
+.userCreateForm input[type='text'], .contactCreateSubmit{
+    margin: 5px 10px;
+}
 
 
 
+/*
+    Index
+*/
+.userContainer {
+    height: 25px;
+    line-height: 25px;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.userContainer a{
+    color: #000000;
+}
 
 
 

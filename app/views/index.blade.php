@@ -8,7 +8,7 @@ $pageTitle = "Contacts";
 
 @foreach($users as $user)
 <div class="userContainer">
-    {{ HTML::link('/user/'.$user->id, $user->firstName." ".$user->lastName) }}
+    {{ HTML::link('/user/'.$user->id, $user->lastName.", ".$user->firstName) }}
 </div>
 
 @endforeach
