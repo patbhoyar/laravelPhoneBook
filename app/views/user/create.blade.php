@@ -49,7 +49,7 @@
 <br>
 
 {{ Form::Label('userCountry', 'Country') }}
-{{ Form::text('userCountry', '', array('class' => 'userCountryText', 'placeholder' => 'Country')) }}
+{{ Form::select('userCountry', $countries, 244) }}
 @if($errors->has('country')) {{ $errors->first('country') }} @endif
 <br>
 

@@ -34,7 +34,7 @@
         {{ (strlen($address->getLine2()) > 0)?$address->getLine2():'' }}</br>
         {{ $address->getCity() }} </br>
         {{ $address->getState() }} </br>
-        {{ $address->getCountry() }} </br>
+        {{ $countries[$address->getCountry()] }} </br>
         {{ $address->getZipcode() }} </br>
      @endif
     </p>

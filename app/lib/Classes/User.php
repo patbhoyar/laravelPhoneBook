@@ -4,12 +4,28 @@ namespace lib\Classes;
 
 
 class User {
-
+    private $id;
     private $firstName;
     private $lastName;
     private $photo;
     private $phones;
     private $address;
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
      * @param mixed $address

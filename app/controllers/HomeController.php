@@ -19,7 +19,7 @@ class HomeController extends BaseController {
 
 	public function index()
 	{
-        $users = User::all();
+        $users = User::orderBy('lastName', 'asc')->get();
         return View::make('index', array('users' => $users));
 	}
 
