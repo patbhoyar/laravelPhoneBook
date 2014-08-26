@@ -4,7 +4,6 @@
 	{{ HTML::style('css/styles.css') }}
 	{{ HTML::script('js/jquery.js') }}
 	{{ HTML::script('js/script.js') }}
-    {{ HTML::script('js/albumEdit.js') }}
         <?php 
             $pageTitle = isset($pageTitle)?$pageTitle:""; 
             $errorMsg = Session::get('errorMsg');
@@ -31,6 +30,12 @@
 
         <div id="pageTitleContainer">
             <div id="pageTitle">{{ $pageTitle }}</div>
+            @if(isset($button) && $button == 'edit')
+                <div class="buttons titleButton">
+                    <!-- $userInfo passed with user.index page -->
+                    {{ HTML::link('/user/'.$userInfo->getId().'/edit', 'Edit') }}
+                </div>
+            @endif
         </div>
 
         @if(isset($errorMsg) && $errorMsg !== '' && isset($position) && $position == 'middle')

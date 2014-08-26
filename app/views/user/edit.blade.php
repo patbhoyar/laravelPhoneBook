@@ -2,7 +2,8 @@
 
 <?php
     $pageTitle = "Edit";
-    //var_dump($user);
+    //var_dump($user->getPhones()[0]->getPhoneNumber());
+    //die();
     //var_dump($errors);
 ?>
 
@@ -20,14 +21,40 @@
 @if($errors->has('lastName')) {{ $errors->first('lastName') }} @endif
 <br>
 
+{{ Form::Label('userEmail', 'Email') }}
+{{ Form::text('userEmail', $user->getEmail(), array('class' => 'userEmailText', 'placeholder' => 'john@xyz.com')) }}
+@if($errors->has('email')) {{ $errors->first('email') }} @endif
+<br>
+
+<?php
+
+$homePhone = '';
+$workPhone = '';
+
+if(sizeof($user->getPhones()) > 0){
+    foreach($user->getPhones() as $phones){
+        $phoneType = $phones->getPhoneType();
+        $phoneNumber = $phones->getPhoneNumber();
+
+        if($phoneType == 'Home')
+            $homePhone = $phoneNumber;
+        else
+            $workPhone = $phoneNumber;
+    }
+}
+
+
+
+?>
+
 
 {{ Form::Label('userHomePhone', 'Home Phone') }}
-{{ Form::text('userHomePhone', $user->getPhones()[0]->getPhoneNumber(), array('class' => 'userHomePhoneText', 'placeholder' => '9864983652')) }}
+{{ Form::text('userHomePhone', $homePhone, array('class' => 'userHomePhoneText', 'placeholder' => '9864983652')) }}
 @if($errors->has('homePhone')) {{ $errors->first('homePhone') }} @endif
 <br>
 
 {{ Form::Label('userWorkPhone', 'Work Phone') }}
-{{ Form::text('userWorkPhone', $user->getPhones()[1]->getPhoneNumber(), array('class' => 'userWorkPhoneText', 'placeholder' => '9238465182')) }}
+{{ Form::text('userWorkPhone', $workPhone, array('class' => 'userWorkPhoneText', 'placeholder' => '9238465182')) }}
 @if($errors->has('workPhone')) {{ $errors->first('workPhone') }} @endif
 <br>
 
@@ -58,6 +85,7 @@
 @if($errors->has('zipcode')) {{ $errors->first('zipcode') }} @endif
 <br>
 
-{{ Form::submit('Create Contact', array('class' => 'contactCreateSubmit')) }}
+{{ Form::submit('Save Changes', array('class' => 'contactCreateSubmit')) }}
+<div class="buttons" id="cancelButton">{{ HTML::link('user/'.$user->getId(), 'Cancel')  }}</div>
 {{ Form::close() }}
 @stop

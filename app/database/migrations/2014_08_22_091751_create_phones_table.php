@@ -16,7 +16,7 @@ class CreatePhonesTable extends Migration {
 		{
 			$table->increments('id');
             $table->unsignedInteger('user_id');
-            $table->string('phoneType')->default('Cell');
+            $table->string('phoneType')->default('Home');
             $table->bigInteger('phoneNumber');
 			$table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');

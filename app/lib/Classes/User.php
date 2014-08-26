@@ -7,6 +7,7 @@ class User {
     private $id;
     private $firstName;
     private $lastName;
+    private $email;
     private $photo;
     private $phones;
     private $address;
@@ -25,6 +26,22 @@ class User {
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @param mixed $email
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEmail()
+    {
+        return $this->email;
     }
 
     /**

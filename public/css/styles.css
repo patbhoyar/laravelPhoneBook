@@ -82,9 +82,10 @@ form input[type="submit"]{
     padding: 0 10px 10px 10px;
 }
 
-.buttons{
+.buttons, .contactCreateSubmit{
     width: 200px;
-    height: 26px;
+    height: 30px;
+    line-height: 30px;
     background: #ddd;
     border: 1px solid #aaa;
     border-radius: 5px;
@@ -93,9 +94,14 @@ form input[type="submit"]{
 }
 
 .buttons a{
+    font-size: 21px;
     color: #000;
     display: block;
-    margin-top: 5px;
+}
+
+.titleButton{
+    float: right;
+    margin-top: -32px;
 }
 
 #displayContainer{
@@ -123,6 +129,23 @@ form input[type="submit"]{
     margin: 5px 10px;
 }
 
+#phonesTitle, #addressTitle, #emailsTitle{
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#phonesContainer, #addressContainer, #emailsContainer{
+    margin: 10px 0 0 18px;
+}
+
+#userDataContainer img{
+    width: 180px;
+    height: 180px;
+    position: absolute;
+    left: 400px;
+    top: 50px;
+}
 
 /*
     Index
@@ -138,6 +161,34 @@ form input[type="submit"]{
     color: #000000;
 }
 
+#userDataContainer{
+    width: 600px;
+    min-height: 250px;
+    height: auto;
+    position: relative;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    padding: 30px;
+    margin: auto;
+    -webkit-box-shadow: 1px 1px 10px 0px rgba(50, 50, 50, 0.43);
+    -moz-box-shadow:    1px 1px 10px 0px rgba(50, 50, 50, 0.43);
+    box-shadow:         1px 1px 10px 0px rgba(50, 50, 50, 0.43);
+}
+
+#userNameContainer {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    width: 270px;
+    position: absolute;
+    left: 358px;
+    top: 245px;
+}
+
+#userEmailContainer{
+    font-size: 18px;
+    color: #8474DB;
+}
 /*
     Create
 */
@@ -147,8 +198,19 @@ form input[type="submit"]{
 
 
 
+/* Edit */
 
+.contactCreateSubmit{
+    display: block;
+    float: left;
+    height: 31px;
+    line-height: 26px;
+}
 
+#cancelButton{
+    float: left;
+    margin: 10px 20px;
+}
 
 
 

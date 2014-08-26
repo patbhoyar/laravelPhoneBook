@@ -11,6 +11,7 @@ class UserController extends \BaseController {
     private $rules = array(
         'firstName' =>  'required|alpha',
         'lastName'  =>  'required|alpha',
+        'email'     =>  'email',
         'homePhone' =>  'digits_between:6,10',
         'workPhone' =>  'digits_between:6,10',
         'line1'     =>  'required|alpha_num',
@@ -119,28 +120,35 @@ class UserController extends \BaseController {
 		//
 	}
 
+    private static function createPhoneObject($userId, $phoneType, $phoneNumber){
+        $phone = new Phone();
+        $phone->user_id = $userId;
+        $phone->phoneType = $phoneType;
+        $phone->phoneNumber = $phoneNumber;
+        $phone->save();
+    }
+
     private static function savePhone($userId, $homePhone, $workPhone, $oldUser){
 
         if(!$oldUser){
-            $phone = new Phone();
-            $phone->user_id = $userId;
-            $phone->phoneType = 'Home';
-            $phone->phoneNumber = $homePhone;
-            $phone->save();
-
-            $phone = new Phone();
-            $phone->user_id = $userId;
-            $phone->phoneType = 'Work';
-            $phone->phoneNumber = $workPhone;
-            $phone->save();
+            self::createPhoneObject($userId, 'Home', $homePhone);
+            self::createPhoneObject($userId, 'Work', $workPhone);
         }else{
             $phone = Phone::where('user_id', '=', $userId)->where('phoneType', '=', 'Home')->first();
-            $phone->phoneNumber = $homePhone;
-            $phone->save();
+            if(is_null($phone)){
+                self::createPhoneObject($userId, 'Home', $homePhone);
+            }else{
+                $phone->phoneNumber = $homePhone;
+                $phone->save();
+            }
 
             $phone = Phone::where('user_id', '=', $userId)->where('phoneType', '=', 'Work')->first();
-            $phone->phoneNumber = $workPhone;
-            $phone->save();
+            if(is_null($phone)){
+                self::createPhoneObject($userId, 'Work', $workPhone);
+            }else{
+                $phone->phoneNumber = $workPhone;
+                $phone->save();
+            }
         }
     }
 
@@ -174,6 +182,7 @@ class UserController extends \BaseController {
         }
         $user->firstName = $userData['firstName'];
         $user->lastName = $userData['lastName'];
+        $user->email = $userData['email'];
         $user->photo = 'abc.jpg';
         $user->save();
         $id = $user->id;
@@ -220,6 +229,7 @@ class UserController extends \BaseController {
         $myUser->setId($id);
         $myUser->setFirstName($user->firstName);
         $myUser->setLastName($user->lastName);
+        $myUser->setEmail($user->email);
         $myUser->setPhoto($user->photo);
         $myUser->setAddress($address);
         $myUser->setPhones($phones);
@@ -232,6 +242,7 @@ class UserController extends \BaseController {
         return array(
             'firstName' =>  Input::get('userFirstName'),
             'lastName'  =>  Input::get('userLastName'),
+            'email'     =>  Input::get('userEmail', NULL),
             'homePhone' =>  Input::get('userHomePhone', NULL),
             'workPhone' =>  Input::get('userWorkPhone', NULL),
             'line1'     =>  Input::get('userLine1'),

@@ -16,6 +16,11 @@
 @if($errors->has('lastName')) {{ $errors->first('lastName') }} @endif
 <br>
 
+{{ Form::Label('userEmail', 'Email') }}
+{{ Form::text('userEmail','', array('class' => 'userEmailText', 'placeholder' => 'john@xyz.com')) }}
+@if($errors->has('email')) {{ $errors->first('email') }} @endif
+<br>
+
 
 {{ Form::Label('userHomePhone', 'Home Phone') }}
 {{ Form::text('userHomePhone', '', array('class' => 'userHomePhoneText', 'placeholder' => '9864983652')) }}
