@@ -1,6 +1,7 @@
 <?php
 
 use lib\libraries\fpdf\fpdf as FPDFLib;
+use lib\Classes\ExportData as Export;
 
 class HomeController extends BaseController {
 
@@ -48,5 +49,14 @@ class HomeController extends BaseController {
         $pdf->Output();
 //$pdf->Output('contacts.pdf', 'D');
     }
+
+    public function exportCsv()
+    {
+        $contacts = array_values(User::all()->toArray());
+        //dd($contacts);
+        Export::CSV($contacts);
+        return View::make('downloads');
+    }
+
 
 }

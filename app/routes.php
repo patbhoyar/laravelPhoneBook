@@ -13,6 +13,8 @@
 
 Route::get('/', 'HomeController@index');
 Route::get('/export/pdf', 'HomeController@exportPdf');
+Route::get('/export/csv', 'HomeController@exportCsv');
+
 
 /* User */
 Route::resource('user', 'UserController');
