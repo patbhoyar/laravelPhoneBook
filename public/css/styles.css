@@ -129,13 +129,13 @@ form input[type="submit"]{
     margin: 5px 10px;
 }
 
-#phonesTitle, #addressTitle, #emailsTitle{
+#phonesTitle, #addressTitle, #emailsTitle, #birthdayTitle{
     font-size: 18px;
     font-weight: bold;
     margin-top: 10px;
 }
 
-#phonesContainer, #addressContainer, #emailsContainer{
+#phonesContainer, #addressContainer, #emailsContainer, #birthdayContainer{
     margin: 10px 0 0 18px;
 }
 

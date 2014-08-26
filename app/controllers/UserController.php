@@ -12,6 +12,7 @@ class UserController extends \BaseController {
         'firstName' =>  'required|alpha',
         'lastName'  =>  'required|alpha',
         'email'     =>  'email',
+        'birthday'  =>  'date',
         'homePhone' =>  'digits_between:6,10',
         'workPhone' =>  'digits_between:6,10',
         'line1'     =>  'required|alpha_num',
@@ -99,9 +100,6 @@ class UserController extends \BaseController {
 
         if($validator->fails()){
             $messages = $validator->messages();
-            //var_dump($messages);
-            //dd($userData);
-
             return Redirect::to('user/'.$id.'/edit')->withErrors($messages)->withInput();
         }
 
@@ -183,7 +181,8 @@ class UserController extends \BaseController {
         $user->firstName = $userData['firstName'];
         $user->lastName = $userData['lastName'];
         $user->email = $userData['email'];
-        $user->photo = 'abc.jpg';
+        $user->birthday = $userData['birthday'];
+        $user->photo = 'profilepic.jpeg';
         $user->save();
         $id = $user->id;
 
@@ -230,6 +229,7 @@ class UserController extends \BaseController {
         $myUser->setFirstName($user->firstName);
         $myUser->setLastName($user->lastName);
         $myUser->setEmail($user->email);
+        $myUser->setBirthday($user->birthday);
         $myUser->setPhoto($user->photo);
         $myUser->setAddress($address);
         $myUser->setPhones($phones);
@@ -243,6 +243,7 @@ class UserController extends \BaseController {
             'firstName' =>  Input::get('userFirstName'),
             'lastName'  =>  Input::get('userLastName'),
             'email'     =>  Input::get('userEmail', NULL),
+            'birthday'  =>  Input::get('userBirthday', NULL),
             'homePhone' =>  Input::get('userHomePhone', NULL),
             'workPhone' =>  Input::get('userWorkPhone', NULL),
             'line1'     =>  Input::get('userLine1'),

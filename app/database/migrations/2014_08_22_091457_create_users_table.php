@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration {
             $table->string('firstName');
             $table->string('lastName');
             $table->string('email');
+            $table->date('birthday');
             $table->string('photo')->default('profilepic.jpeg');
             $table->timestamps();
         });

@@ -4,6 +4,7 @@
     $pageTitle = $userInfo->getName();
     $button = 'edit';
     $address = $userInfo->getAddress();
+    $bday = date("jS F, Y", strtotime($userInfo->getBirthday()));
 ?>
 
 @section('content')
@@ -13,6 +14,10 @@
     <div id="emailsTitle">Emails:</div>
     <div id="emailsContainer">
         <div id="userEmailContainer">{{ $userInfo->getEmail() }}</div>
+    </div>
+    <div id="birthdayTitle">Birthday:</div>
+    <div id="birthdayContainer">
+        <div id="userBirthdayContainer">{{ $bday }}</div>
     </div>
     {{ HTML::image('images/userpics/'.$userInfo->getPhoto(), $alt="DRCSports", $attributes = array()) }}
 

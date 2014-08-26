@@ -8,6 +8,7 @@ class User {
     private $firstName;
     private $lastName;
     private $email;
+    private $birthday;
     private $photo;
     private $phones;
     private $address;
@@ -42,6 +43,22 @@ class User {
     public function getEmail()
     {
         return $this->email;
+    }
+
+    /**
+     * @param mixed $birthday
+     */
+    public function setBirthday($birthday)
+    {
+        $this->birthday = $birthday;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBirthday()
+    {
+        return $this->birthday;
     }
 
     /**

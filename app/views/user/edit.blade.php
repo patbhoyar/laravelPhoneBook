@@ -26,6 +26,11 @@
 @if($errors->has('email')) {{ $errors->first('email') }} @endif
 <br>
 
+{{ Form::Label('userBirthday', 'Birthday') }}
+{{ Form::text('userBirthday',$user->getBirthday(), array('class' => 'userBirthdayText', 'placeholder' => '1967-02-21')) }}
+@if($errors->has('birthday')) {{ $errors->first('birthday') }} @endif
+<br>
+
 <?php
 
 $homePhone = '';
