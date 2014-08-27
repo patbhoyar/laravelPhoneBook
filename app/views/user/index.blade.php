@@ -1,10 +1,12 @@
 @extends('master')
 
 <?php
-    $pageTitle = $userInfo->getName();
-    $button = 'edit';
-    $address = $userInfo->getAddress();
-    $bday = date("jS F, Y", strtotime($userInfo->getBirthday()));
+    $pageTitle  = $userInfo->getName();
+    $scripts    = ['jquery', 'menu'];
+    $css        = ['styles'];
+    $button     = 'edit';
+    $address    = $userInfo->getAddress();
+    $bday       = date("jS F, Y", strtotime($userInfo->getBirthday()));
 ?>
 
 @section('content')

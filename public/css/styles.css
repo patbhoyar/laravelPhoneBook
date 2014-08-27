@@ -25,6 +25,7 @@ ul li a{
     width: 800px;
     margin: auto;
     height: 40px;
+    position: relative;
 }
 
 #header a, #loginRegister{
@@ -35,6 +36,24 @@ ul li a{
     float: left;
     padding: 8px 20px;
     font-size: 18px;
+}
+
+#exportMenu{
+    position: absolute;
+    background: #183B68;
+    padding: 10px;
+    top: 31px;
+    left: 171px;
+    display: none;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+#exportMenu li{
+    float: left;
+    clear: both;
+    padding: 5px;
+    color: white;
 }
 
 .colorGrey{ color: #555; }
@@ -196,6 +215,14 @@ form input[type="submit"]{
     font-size: 18px;
 }
 
+#fileUpload{
+    display: none;
+}
+
+#picName{
+    margin-top: 10px;
+}
+
 
 
 /* Edit */
@@ -212,7 +239,22 @@ form input[type="submit"]{
     margin: 10px 20px;
 }
 
+#photoContainer {
+    width: 202px;
+    text-align: center;
+    height: 300px;
+    float: right;
+    margin-top: -120px;
+}
 
+#photoContainer img{
+    width: 200px;
+    height: 200px;
+}
+
+#photoContainer .buttons{
+    margin-top: 10px;
+}
 
 
 

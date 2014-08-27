@@ -169,7 +169,6 @@ class UserController extends \BaseController {
     }
 
     private static function saveUserData($userData, $id = NULL){
-
         $oldUser = TRUE;
 
         if(is_null($id)){
@@ -182,10 +181,23 @@ class UserController extends \BaseController {
         $user->lastName = $userData['lastName'];
         $user->email = $userData['email'];
         $user->birthday = $userData['birthday'];
-        $user->photo = 'profilepic.jpeg';
+
+        $pic = Input::file('profilePic');
+        if(!is_null($pic)){
+            $filename = $pic->getClientOriginalName();
+           // $extension =$photo->getClientOriginalExtension();
+            $destinationPath = 'images/userpics';
+            $uploadSuccess = $pic->move($destinationPath, $filename);
+            if($uploadSuccess == false) {
+                return Response::json('error', 400);
+            }
+            $user->photo = $filename;
+        }else{
+            $user->photo = 'profilepic.jpeg';
+        }
+
         $user->save();
         $id = $user->id;
-
         self::savePhone($id, $userData['homePhone'], $userData['workPhone'], $oldUser);
 
         self::saveAddress($id, $userData['line1'],  $userData['line2'], $userData['city'], $userData['state'], $userData['country'], $userData['zipcode'], $oldUser);
@@ -238,7 +250,6 @@ class UserController extends \BaseController {
     }
 
     private static function getUserInput(){
-
         return array(
             'firstName' =>  Input::get('userFirstName'),
             'lastName'  =>  Input::get('userLastName'),

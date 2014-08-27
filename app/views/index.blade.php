@@ -1,7 +1,9 @@
 @extends('master')
 
 <?php
-$pageTitle = "Contacts";
+    $pageTitle  = "Contacts";
+    $scripts    = ['jquery', 'menu'];
+    $css        = ['styles'];
 ?>
 
 @section('content')

@@ -1,10 +1,14 @@
 @extends('master')
 
-<?php $pageTitle = "Add New Contact"; ?>
+<?php
+    $pageTitle  = "Add New Contact";
+    $scripts    =  ['jquery', 'jqueryui/jquery-ui.min', 'datePicker', 'createUser'];
+    $css        = ['styles', 'jquery-ui/jquery-ui.min'];
+?>
 
 @section('content')
 
-{{ Form::open(array('url' => '/user', 'method' => 'post', 'class' => 'userCreateForm')) }}
+{{ Form::open(array('url' => '/user', 'method' => 'post', 'class' => 'userCreateForm', 'files' => true)) }}
 
 {{ Form::Label('userFirstName', 'First Name') }}
 {{ Form::text('userFirstName','', array('class' => 'userFirstNameText', 'placeholder' => 'John')) }}
@@ -22,9 +26,16 @@
 <br>
 
 {{ Form::Label('userBirthday', 'Birthday') }}
-{{ Form::text('userBirthday','', array('class' => 'userBirthdayText', 'placeholder' => '1967-02-21')) }}
+{{ Form::text('userBirthday','', array('class' => 'userBirthdayText', 'placeholder' => '1967-02-21', 'id' => 'datepicker')) }}
 @if($errors->has('birthday')) {{ $errors->first('birthday') }} @endif
 <br>
+
+<div id="photoContainer">
+    {{ HTML::image('images/userpics/profilepic.jpeg', $alt="DRCSports", $attributes = array()) }}
+    <div class="buttons" id="uploadProfilePic">Add User Image</div>
+    {{ Form::file('profilePic', array('id' => 'fileUpload')) }}
+    <div id="picName"></div>
+</div>
 
 
 

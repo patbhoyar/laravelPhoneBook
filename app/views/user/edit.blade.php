@@ -1,15 +1,14 @@
 @extends('master')
 
 <?php
-    $pageTitle = "Edit";
-    //var_dump($user->getPhones()[0]->getPhoneNumber());
-    //die();
-    //var_dump($errors);
+    $pageTitle  = "Edit";
+    $scripts    = ['jquery', 'jqueryui/jquery-ui.min', 'datePicker', 'createUser'];
+    $css        = ['styles', 'jquery-ui/jquery-ui.min'];
 ?>
 
 @section('content')
 
-{{ Form::open(array('url' => '/user/'.$user->getId(), 'method' => 'put', 'class' => 'userCreateForm')) }}
+{{ Form::open(array('url' => '/user/'.$user->getId(), 'method' => 'put', 'class' => 'userCreateForm', 'files' => true)) }}
 
 {{ Form::Label('firstName', 'First Name') }}
 {{ Form::text('userFirstName', $user->getFirstName(), array('class' => 'userFirstNameText', 'placeholder' => 'John')) }}
@@ -27,12 +26,18 @@
 <br>
 
 {{ Form::Label('userBirthday', 'Birthday') }}
-{{ Form::text('userBirthday',$user->getBirthday(), array('class' => 'userBirthdayText', 'placeholder' => '1967-02-21')) }}
+{{ Form::text('userBirthday',$user->getBirthday(), array('class' => 'userBirthdayText', 'placeholder' => '1967-02-21', 'id' => 'datepicker')) }}
 @if($errors->has('birthday')) {{ $errors->first('birthday') }} @endif
 <br>
 
-<?php
+<div id="photoContainer">
+    {{ HTML::image('images/userpics/'.$user->getPhoto(), $alt="DRCSports", $attributes = array()) }}
+    <div class="buttons" id="uploadProfilePic">Change Pic</div>
+    {{ Form::file('profilePic', array('id' => 'fileUpload')) }}
+    <div id="picName"></div>
+</div>
 
+<?php
 $homePhone = '';
 $workPhone = '';
 
@@ -47,9 +52,6 @@ if(sizeof($user->getPhones()) > 0){
             $workPhone = $phoneNumber;
     }
 }
-
-
-
 ?>
 
 

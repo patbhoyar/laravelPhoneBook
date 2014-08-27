@@ -1,9 +1,12 @@
 <!doctype html>
 <html>
 <head>
-	{{ HTML::style('css/styles.css') }}
-	{{ HTML::script('js/jquery.js') }}
-	{{ HTML::script('js/script.js') }}
+
+    @if(isset($css))
+        @foreach($css as $style)
+            {{ HTML::style('css/'.$style.'.css') }}
+        @endforeach
+    @endif
         <?php 
             $pageTitle = isset($pageTitle)?$pageTitle:""; 
             $errorMsg = Session::get('errorMsg');
@@ -16,8 +19,12 @@
         <div id="header">
             <ul id="menu">
                 <li id="home">{{ HTML::link('/', 'Home') }}</li>
-                <li id="create">{{ HTML::link('/user/create', 'Add') }}</li>
-                <li id="albums">{{ HTML::link('/export/pdf', 'Export') }}</li>
+                <li id="add">{{ HTML::link('/user/create', 'Add') }}</li>
+                <li id="export">{{ HTML::link('/export/pdf', 'Export') }}</li>
+            </ul>
+            <ul id="exportMenu">
+                <li id="csv">{{ HTML::link('/export/csv', 'Export as CSV') }}</li>
+                <li id="pdf">{{ HTML::link('/export/pdf', 'Export as PDF') }}</li>
             </ul>
 	    </div>
     </div>
@@ -44,5 +51,11 @@
 
         @yield('content')
 	</div>
+
+    @if(isset($scripts))
+        @foreach($scripts as $script)
+            {{ HTML::script('scripts/'.$script.'.js') }}
+        @endforeach
+    @endif
 </body>
 </html>
