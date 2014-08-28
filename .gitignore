@@ -3,5 +3,5 @@
 composer.phar
 composer.lock
 .DS_Store
-/public/iimages/userpics
+/public/images/userpics
 
